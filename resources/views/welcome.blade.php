@@ -17,7 +17,7 @@
             </div>
             <x-services />
 
-            <div class="text-center mt-16" id="aboutdiv">
+            <div class="about text-center mt-16" id="aboutdiv">
                 <h1 class="uppercase text-6xl text-purple-900 font-bold leading-none tracking-wide mb-2">About</h1>
             </div>
             <x-about />

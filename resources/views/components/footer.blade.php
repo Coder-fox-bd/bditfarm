@@ -101,16 +101,19 @@
             </div>
 
             <!-- Links -->
-            <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                GitHub
+            <a href="https://www.facebook.com/bditfirmonly" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                Facebook
             </a>
-            <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                Discord
+            <a href="https://www.linkedin.com/in/bditfirmonly" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                Linkedin
             </a>
-            <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+            <a href="https://twitter.com/bditfirmonly" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                 Twitter
             </a>
-            <a href="#" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+            <a href="https://www.instagram.com/bditfirmonly" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCMrSZVmfq9Yy92-MZbOIjrg" class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                 YouTube
             </a>
         </div>
@@ -127,19 +130,19 @@
 
             <!-- Required Unicons (if you want) -->
             <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
-                <a href="#" class="w-6 mx-1">
+                <a href="https://www.facebook.com/bditfirmonly" class="w-6 mx-1">
                     <i class="uil uil-facebook-f"></i>
                 </a>
-                <a href="#" class="w-6 mx-1">
+                <a href="https://twitter.com/bditfirmonly" class="w-6 mx-1">
                     <i class="uil uil-twitter-alt"></i>
                 </a>
-                <a href="#" class="w-6 mx-1">
+                <a href="https://www.youtube.com/channel/UCMrSZVmfq9Yy92-MZbOIjrg" class="w-6 mx-1">
                     <i class="uil uil-youtube"></i>
                 </a>
-                <a href="#" class="w-6 mx-1">
+                <a href="https://www.linkedin.com/in/bditfirmonly" class="w-6 mx-1">
                     <i class="uil uil-linkedin"></i>
                 </a>
-                <a href="#" class="w-6 mx-1">
+                <a href="https://www.instagram.com/bditfirmonly" class="w-6 mx-1">
                     <i class="uil uil-instagram"></i>
                 </a>
             </div>

@@ -4,9 +4,10 @@
     </div>
     {{-- <img class="text-1xl font-bold uppercase text-purple-100" src="https://upload.wikimedia.org/wikipedia/commons/1/19/Digital_Marketing_logo.png" width="50" height="10"></img> --}}
     <nav class="hidden md:flex text-lg">
-        <a class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="home">Home</a>
+        <a href="/" class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="home">Home</a>
         <a class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="services">Services</a>
         <a class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="about">About</a>
+        <a href="/training" class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="training">Training</a>
         <a class="text-gray-800 hover:text-purple-300 py-3 px-6 cursor-pointer" id="contact">Contact</a>
         @if (Route::has('login'))
             @auth
@@ -22,9 +23,10 @@
     </nav>
     <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <a class="cursor-pointer" id="home">Home</a>
+        <a href="/" class="cursor-pointer" id="home">Home</a>
         <a class="cursor-pointer" id="services-mob">Services</a>
         <a class="cursor-pointer" id="about-mob">About</a>
+        <a href="/training" class="cursor-pointer" id="training-mob">Training</a>
         <a class="cursor-pointer" id="contact-mob">Contact</a>
     </div>
 

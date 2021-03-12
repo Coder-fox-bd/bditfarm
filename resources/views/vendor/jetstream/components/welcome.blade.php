@@ -65,4 +65,15 @@
             </div>
         </div>
     </div>
+    <div class="w-full md:w-1/2 xl:w-1/3 pt-3 px-3 md:pr-2">
+        <div class="bg-red-900 border rounded shadow p-2">
+            <div class="flex flex-row items-center">
+                <div class="flex-shrink pl-1 pr-4"><i class="fas fa-inbox fa-2x fa-fw fa-inverse"></i></div>
+                <div class="flex-1 text-right">
+                    <h5 class="text-white">Training</h5>
+                    <h3 class="text-white text-3xl">3 <span class="text-pink-400"><i class="fas fa-caret-up"></i></span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
