@@ -26,6 +26,7 @@
         </div>
     </body>
     <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
     @livewireScripts

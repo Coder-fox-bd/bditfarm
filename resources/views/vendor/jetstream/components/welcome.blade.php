@@ -38,7 +38,7 @@
                 <div class="flex-shrink pl-1 pr-4"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
                 <div class="flex-1 text-right">
                     <h5 class="text-white">Server Uptime</h5>
-                    <h3 class="text-white text-3xl">76 days</h3>
+                    <h3 class="text-white text-3xl">{{$days}}</h3>
                 </div>
             </div>
         </div>

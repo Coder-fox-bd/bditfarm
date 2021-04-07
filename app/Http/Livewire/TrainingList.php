@@ -11,11 +11,10 @@ class TrainingList extends Component
     public $alltraining;
     use WithFileUploads;
     public $trainingName, $details, $fileName, $amount, $discount, $selected_id;
-    public $updateMode = false;
 
     public function render()
     {
-        $this->alltraining = Trainings::all();
+        $this->alltraining = Trainings::orderByDesc(column:'id')->get();
         return view('livewire.training-list');
     }
 
@@ -28,19 +27,32 @@ class TrainingList extends Component
         $this->details = null;
     }
 
-    public function store()
+    public function submit()
     {   
-        $validate = $this->validate([
-            'fileName' => 'required|image|mimes:jpg,jpeg,png,svg,gif|max:2048', // 2MB Max
-            'amount' => 'required|string|max:55',
-            'discount' => 'max:55',
-            'trainingName' => 'required|string|max:1000',
-            'details' => 'required|string|max:5000',
-        ]);
-
-        $validate['fileName'] = $this->fileName->store('trainings', 'public');
-        Trainings::create($validate);
-        session()->flash('alart-success', "Contacts saved successfully!");
+        if(!$this->selected_id){
+            $validate = $this->validate([
+                'fileName' => 'required|image|mimes:jpg,jpeg,png,svg,gif|max:2048', // 2MB Max
+                'amount' => 'required|string|max:55',
+                'discount' => 'max:55',
+                'trainingName' => 'required|string|max:1000',
+                'details' => 'required|string|max:5000',
+            ]);
+            $validate['fileName'] = $this->fileName->store('trainings', 'public');
+            Trainings::create($validate);
+        }else{
+            $validate = $this->validate([
+                'selected_id' => 'required|numeric',
+                'fileName' => 'required|image|mimes:jpg,jpeg,png,svg,gif|max:2048', // 2MB Max
+                'amount' => 'required|string|max:55',
+                'discount' => 'max:55',
+                'trainingName' => 'required|string|max:1000',
+                'details' => 'required|string|max:5000'
+            ]);
+            $validate['fileName'] = $this->fileName->store('trainings', 'public');
+            $record = Trainings::find($this->selected_id);
+            $record->update($validate);
+        };
+        session()->flash('alart-success', "Request saved successfully!");
         $this->resetInput();
     }
     public function edit($id)
@@ -51,31 +63,7 @@ class TrainingList extends Component
         $this->trainingName = $record->trainingName;
         $this->amount = $record->amount;
         $this->discount = $record->discount;
-        $this->details = $record->details;
-        $this->updateMode = true;
-    }
-    public function update()
-    {
-        $validate = $this->validate([
-            'selected_id' => 'required|numeric',
-            'amount' => 'required|string|max:55',
-            'discount' => 'max:55',
-            'trainingName' => 'required|string|max:1000',
-            'details' => 'required|string|max:5000'
-        ]);
-
-        if(!$this->fileName){
-            $validate['fileName'] = ['required|image|mimes:jpg,jpeg,png,svg,gif|max:2048']; // 2MB Max
-            $validate['fileName'] = $this->fileName->store('trainings', 'public');
-        }
-        
-        if ($this->selected_id) {
-            $record = Trainings::find($this->selected_id);
-            $record->update($validate);
-            $this->resetInput();
-            session()->flash('alart-success', "Updated successfully!");
-            $this->updateMode = false;
-        }
+        $this->details = $record->details; 
     }
     public function destroy($id)
     {

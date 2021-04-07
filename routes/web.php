@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Training;
+use App\Http\Livewire\Studentreg;
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\AdminTraining;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,16 +23,13 @@ Route::get('/team', function () {
     return view('teams');
 });
 
-Route::get('/training', [Training::class, 'show'])->name('training');
+Route::get('/training', Studentreg::class);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/all-trainings', function () {
+//     return view('admin-training');
+// })->name('all-trainings');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/all-trainings', function () {
-    return view('admin-training');
-})->name('all-trainings');
-
-// Route::group(['middleware'=>['auth:sanctum', 'verified']],function (){
-//     Route::get('training-edit', [Training::class, 'render'])->name('all-trainings');
-// });
+Route::group(['middleware'=>['auth:sanctum', 'verified']],function (){
+    Route::get('/dashboard', [Dashboard::class, 'dashboardView'])->name('dashboard');
+    Route::get('/all-trainings', [AdminTraining::class, 'trainingView'])->name('all-trainings');
+});

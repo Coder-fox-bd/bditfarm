@@ -1,5 +1,5 @@
-<x-guest-layout>
-    <div class="py-12">
+<div>
+    <div class="py-12" x-data="{ showModal2: false }" :class="{'overflow-y-hidden': showModal2 }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="rounded-full h-14 w-14 flex items-center justify-center text-5xl text-red-700 bg-white shadow-md fixed">
                 <a href="/">
@@ -12,7 +12,7 @@
                   Enseigner c'est apprendre deux fois. J'aime partager mes connaissances et mes découvertses.
                 </p>
             </div>
-            <div class="flex justify-center flex-wrap">
+            <div class="flex justify-center flex-wrap" x-data="{ showModal2: false }" :class="{'overflow-y-hidden': showModal2 }">
                 @foreach ($datas as $data)
                 <div class="xl:w-1/2 md:w-1/2 p-4">
                     <div class="md:flex shadow-lg md:mx-auto max-w-lg md:max-w-xl">
@@ -35,14 +35,17 @@
                             {{ $data->details }}
                         </p>
                         <div class="flex items-center justify-end mt-4 top-auto">
-                            <button class=" bg-blue-600 text-gray-200 px-2 py-2 rounded-md ">Register</button>
+                            <a wire:click="$set('reg_id', '{{$data->id}}')" class="bg-green-600 font-semibold text-white p-3 rounded-xl hover:bg-green-700 focus:outline-none focus:ring shadow-lg hover:shadow-none transition-all duration-300 m-2" @click="showModal2 = true">
+                                Register
+                            </a>
                         </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 @endforeach
+                @include('livewire.studentform')
             </div>
         </div>
     </div>
     <x-footer />
-</x-guest-layout>
+</div>
