@@ -13,7 +13,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/main.min.css') }}">
     </head>
     <body>
         <a id="button">
@@ -25,9 +25,10 @@
             {{ $slot }}
         </div>
     </body>
+
     <!-- Scripts -->
+    @livewireScripts
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
-    @livewireScripts
+    <script src="{{ asset('js/main.min.js') }}"></script>
 </html>

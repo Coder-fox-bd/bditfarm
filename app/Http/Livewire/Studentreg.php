@@ -18,14 +18,14 @@ class Studentreg extends Component
         'reg_id' => 'required|integer|max:255',
         'full_name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255,',
-        'contact' => 'required|string|min:6|max:15,',
+        'contact' => 'required|string|min:11|max:15,',
     ];
-    public function render()
+
+    public function updated($propertyName)
     {
-        $this->datas = Trainings::all();
-        return view('livewire.studentreg')
-        ->layout('layouts.guest');
+        $this->validateOnly($propertyName);
     }
+
     public function onSubmit()
     {
         if (!$this->reg_id) {
@@ -44,5 +44,12 @@ class Studentreg extends Component
         $this->full_name="";
         $this->email="";
         $this->contact="";
+    }
+
+    public function render()
+    {
+        $this->datas = Trainings::all();
+        return view('livewire.studentreg')
+        ->layout('layouts.guest');
     }
 }

@@ -17,6 +17,11 @@ class Contact extends Component
         'contact' => 'required|string|min:6|max:15|unique:contacts,contact,',
     ];
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+    
     public function onSubmit()
     {
         $this->validate();
